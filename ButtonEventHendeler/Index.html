@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div>
+      <button id="Click">
+        <p>Click Me</p>
+      </button>
+      <button id="Doubleclick">
+        <p>Double Click me</p>
+      </button>
+      <button id="MouseUp" >
+        <p>Mouse up</p>
+      </button>
+      <button id="MouseDown">
+        <p>Mouse Down</p>
+      </button>
+      
+      
+    </div>
+    <div class="asd">
+        <button id="MouseOver">
+        <p>Mouse Over</p>
+      </button>
+    </div>
+    <div class="actEvent"><button>
+        <p>
+            Active Event is : 
+            <p1 id="changeContent">
+                null
+
+            </p1>
+        </p>
+    </button></div>
+    
+  </body>
+  <script>
+    let Click = document.getElementById("Click")
+    let DoubleClick = document.getElementById("Doubleclick")
+    let MouseDown = document.getElementById("MouseDown")
+    let MouseUp = document.getElementById("MouseUp")
+    let MouseOver = document.getElementById("MouseOver")
+
+    Click.onclick = function() {
+      changeContent("Click");
+    }
+    DoubleClick.ondblclick = function() {
+      changeContent("Double Click");
+    }
+    MouseDown.onmousedown = function() {
+      changeContent("Mouse Down");
+    }
+    MouseUp.onmouseup = function() {
+      changeContent("Mouse Up");
+    }
+    MouseOver.onmouseover = function() {
+      changeContent("Mouse Over");
+    }
+
+    function changeContent(eventType) {
+      document.getElementById("changeContent").innerHTML = eventType;
+    }
+  </script>
+</html>
