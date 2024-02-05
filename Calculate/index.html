@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="content">
+    <h6>JavaScript Tutorial Day 3 - Event, Function, If else</h6>
+    <div class="input-group">
+      <input type="number" id="text1" placeholder="0">
+      <input type="number" id="text2" placeholder="0">
+      <span>=</span>
+      <input type="number" disabled id="res" placeholder="Result">
+    </div>
+    <div class="button-group">
+      <input type="button" onclick="calculate('+')" value="+" id="add">
+      <input type="button" onclick="calculate('-')" value="-" id="subtract">
+      <input type="button" onclick="calculate('*')" value="*" id="multiply">
+      <input type="button" onclick="calculate('/')" value="/" id="divide">
+      <input type="button" onclick="clearFields()" value="Clear" id="clear">
+    </div>
+  </div>
+</body>
+<script>
+  let text1 = document.getElementById("text1"); 
+  let text2 = document.getElementById("text2");
+  let res = document.getElementById("res");
+
+  function calculate(operator) {
+    let number1 = Number(text1.value);
+    let number2 = Number(text2.value);
+    if (!number1 || !number2) {
+      alert("Please enter numbers!");
+      return;
+    }
+
+    switch (operator) {
+      case '+':
+        res.value = number1 + number2;
+        break;
+      case '-':
+        res.value = number1 - number2;
+        break;
+      case '*':
+        res.value = number1 * number2;
+        break;
+      case '/':
+        res.value = number1 / number2;
+        break;
+    }
+  }
+
+  function clearFields() {
+    text1.value = "";
+    text2.value = "";
+    res.value = "";
+  }
+</script>
+</html>
